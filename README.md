@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/poster.jpg" width="100%" alt="better-statusline, by Ewen Gao: the band above the prompt, a music card beside three dot-matrix rings">
+  <img src="docs/poster.jpg" width="100%" alt="better-statusline, by Ewen Gao: the band above the prompt, a music card beside the rings of context, cache and the limits">
 </p>
 
 <h1 align="center">better-statusline</h1>
@@ -11,7 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Claude_Code-2.1.289+-d97757?style=flat-square&labelColor=242137" alt="Claude Code 2.1.289 or later">
-  <img src="https://img.shields.io/badge/version-0.7.0-b1b9f9?style=flat-square&labelColor=242137" alt="Version 0.7.0">
+  <img src="https://img.shields.io/badge/version-0.7.1-b1b9f9?style=flat-square&labelColor=242137" alt="Version 0.7.1">
   <img src="https://img.shields.io/badge/license-MIT-91c882?style=flat-square&labelColor=242137" alt="MIT license">
 </p>
 
@@ -24,19 +24,44 @@
 
 ## The film
 
-https://github.com/user-attachments/assets/e9eac5e8-ed5a-4eeb-a34d-b09a338ef155
+<p align="center">
+  <img src="docs/film.webp" width="100%" alt="The film: a dot becomes a braille cell, a circle is snapped to dots, the rings fill, the music card takes its colour from its cover, and the whole band folds and turns from dark to light">
+</p>
 
-<p align="center"><sub>Fifty-two seconds, with sound. All of it is drawn in code: the picture, the two covers and the score.</sub></p>
+<p align="center">
+  <sub>
+    Fifty-two seconds. All of it is drawn in code: the picture, the two covers and the score.<br>
+    With sound:
+    <a href="https://github.com/Autumn1337/better-statusline/releases/download/v0.7.1/better-statusline-1080p.mp4">1080p</a> ·
+    <a href="https://github.com/Autumn1337/better-statusline/releases/download/v0.7.1/better-statusline-4k.mp4">4K</a>
+  </sub>
+</p>
 
 ## What it shows
 
-![The band as it stands today: the music card, then the header over the rings of context, cache, 5-hour and weekly, and the bars of spend](docs/band.png)
+![The band as it stands: the music card, then the header over the rings of context, cache, 5-hour and weekly, and the bars of spend](docs/band.png)
+
+### Drawn in dots
+
+<p align="center">
+  <img src="docs/stills/01-eight-dots.jpg" width="49%" alt="A braille cell: eight dots, two across and four down">
+  <img src="docs/stills/02-true-circle.jpg" width="49%" alt="A circle laid over the terminal's grid of dots, each point of it snapped to the nearest dot">
+</p>
+
+A braille cell is eight dots. Every drawing here is made of them: a ring is a true circle, found on the screen and snapped dot by dot to the terminal's grid.
 
 ### Rings
 
-<p align="center"><img src="docs/rings.webp" width="760" alt="A ring forms out of dots, fills, and is joined by two more"></p>
+<p align="center">
+  <img src="docs/stills/03-context.jpg" width="49%" alt="The context ring: 26%, 259k of 1M">
+  <img src="docs/stills/04-cache.jpg" width="49%" alt="The cache ring: four minutes left of an hour">
+</p>
+<p align="center">
+  <img src="docs/stills/05-limits.jpg" width="49%" alt="The 5-hour and weekly rings, the weekly one yellow past its pace">
+  <img src="docs/stills/06-rings.jpg" width="49%" alt="The four rings in a row: context, cache, 5-hour, weekly">
+</p>
 
-A braille cell is eight dots, and every figure here is a ring of them, lit clockwise from the top.
+Each ring is lit clockwise from its top, with its figure at its heart.
 
 - **Context**: how full the window is.
 - **Cache**: the minutes left before the prompt cache goes cold, counted from the last response. An hour on a subscription inside its limits, five minutes otherwise.
@@ -46,19 +71,27 @@ Above them, a header names the model and its effort, the folder, the git branch 
 
 ### Spend
 
-<p align="center"><img src="docs/spend.webp" width="760" alt="Bars of dots rise, one for each turn, beside the session's total"></p>
+<p align="center">
+  <img src="docs/stills/07-spend.jpg" width="49%" alt="Bars of dots, one for each turn, beside the session's total and its tokens in and out">
+</p>
 
 One bar for each recent turn, beside the session's total. The bars grow by the square root of the cost, so one dear turn leaves the rest standing.
 
 ### Music
 
-<p align="center"><img src="docs/card.webp" width="760" alt="The music card: its accent is read out of the cover, then the pointer pauses the track and skips to the next"></p>
+<p align="center">
+  <img src="docs/stills/08-colour.jpg" width="49%" alt="The cover's pixels sorted by hue round a wheel, the fullest slice chosen as the card's accent">
+  <img src="docs/stills/09-card.jpg" width="49%" alt="The music card: the cover in its glow, the title, artist and album, the line and the controls, in the cover's own colour">
+</p>
 
 On macOS a card shows what Spotify or Apple Music is playing, in an accent read out of the cover. It takes the mouse: play, pause, skip, seek along the line, shuffle, repeat, and the volume at the right end of the controls.
 
-### One row, light or dark
+### The band
 
-<p align="center"><img src="docs/fold.webp" width="760" alt="The band folds into one row and opens again, then turns from dark to light"></p>
+<p align="center">
+  <img src="docs/stills/10-terminal.jpg" width="49%" alt="The whole band in a terminal window, above the prompt">
+  <img src="docs/stills/11-themes.jpg" width="49%" alt="The band turning from dark to light">
+</p>
 
 `/fold` folds the whole band into one row, and opens it again. The colours are Claude Code's own theme, so the band follows it from dark to light.
 
@@ -83,6 +116,13 @@ From the marketplace this repository carries:
 ```sh
 claude plugin marketplace add Autumn1337/better-statusline
 claude plugin install better-statusline@better-statusline
+```
+
+To take a new version later:
+
+```sh
+claude plugin marketplace update better-statusline
+claude plugin update better-statusline@better-statusline
 ```
 
 Or from a clone, for one session:
@@ -132,3 +172,7 @@ tsc -p .
 ## License
 
 MIT © Ewen Gao
+
+<p align="center">
+  <img src="docs/stills/12-name.jpg" width="49%" alt="better-statusline, Ewen Gao">
+</p>

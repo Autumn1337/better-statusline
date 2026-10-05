@@ -1,6 +1,6 @@
 {
   "name": "better-statusline",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "The status line above the prompt: the session's status and the music playing, one design",
   "author": { "name": "Ewen Gao" },
   "license": "MIT",
