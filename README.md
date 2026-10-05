@@ -1,26 +1,66 @@
-# better-statusline
+<p align="center">
+  <img src="docs/poster.jpg" width="100%" alt="better-statusline, by Ewen Gao: the band above the prompt, a music card beside three dot-matrix rings">
+</p>
 
-A status line for [Claude Code](https://claude.com/claude-code), drawn above the prompt: the session's figures as dot-matrix rings, and the music you are playing beside them.
+<h1 align="center">better-statusline</h1>
 
-![The band above the prompt: a music card with its cover, then the model, the folder and the branch over four rings and a row of bars](docs/band.png)
+<p align="center">
+  A status line for <a href="https://claude.com/claude-code">Claude Code</a>, drawn above the prompt:<br>
+  the session's figures as dot-matrix rings, and the music you are playing beside them.
+</p>
 
-<sub>Drawn by the plugin's own code as Ghostty paints it, with sample figures and a cover made for the picture.</sub>
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude_Code-2.1.289+-d97757?style=flat-square&labelColor=242137" alt="Claude Code 2.1.289 or later">
+  <img src="https://img.shields.io/badge/version-0.7.0-b1b9f9?style=flat-square&labelColor=242137" alt="Version 0.7.0">
+  <img src="https://img.shields.io/badge/license-MIT-91c882?style=flat-square&labelColor=242137" alt="MIT license">
+</p>
+
+<p align="center">
+  <a href="#the-film">The film</a> ·
+  <a href="#what-it-shows">What it shows</a> ·
+  <a href="#install">Install</a> ·
+  <a href="#options">Options</a>
+</p>
+
+## The film
+
+https://github.com/user-attachments/assets/e9eac5e8-ed5a-4eeb-a34d-b09a338ef155
+
+<p align="center"><sub>Fifty-two seconds, with sound. All of it is drawn in code: the picture, the two covers and the score.</sub></p>
 
 ## What it shows
 
-![The status: the header over the rings of context, cache, 5-hour and weekly, and the bars of spend](docs/rings.png)
+![The band as it stands today: the music card, then the header over the rings of context, cache, 5-hour and weekly, and the bars of spend](docs/band.png)
 
-- **Header**: the model and its effort, the folder, the git branch with its staged and modified files, the lines the session added and removed, and the subagents at work.
+### Rings
+
+<p align="center"><img src="docs/rings.webp" width="760" alt="A ring forms out of dots, fills, and is joined by two more"></p>
+
+A braille cell is eight dots, and every figure here is a ring of them, lit clockwise from the top.
+
 - **Context**: how full the window is.
 - **Cache**: the minutes left before the prompt cache goes cold, counted from the last response. An hour on a subscription inside its limits, five minutes otherwise.
 - **5-hour and weekly**: how much of each limit is spent, and when it starts over. The arc turns yellow once you spend faster than the window passes.
-- **Spend**: what each recent turn cost, beside the session's total.
 
-<img src="docs/card.png" width="480" alt="The music card: the cover in its glow, the title, artist and album, the line and the controls">
+Above them, a header names the model and its effort, the folder, the git branch with its staged and modified files, the lines the session added and removed, and the subagents at work.
 
-On macOS a card shows what Spotify or Apple Music is playing. It takes the mouse: play, pause, skip, seek along the line, shuffle, repeat, and the volume at the right end of the controls.
+### Spend
 
-`/fold` folds the whole band into one row, and opens it again.
+<p align="center"><img src="docs/spend.webp" width="760" alt="Bars of dots rise, one for each turn, beside the session's total"></p>
+
+One bar for each recent turn, beside the session's total. The bars grow by the square root of the cost, so one dear turn leaves the rest standing.
+
+### Music
+
+<p align="center"><img src="docs/card.webp" width="760" alt="The music card: its accent is read out of the cover, then the pointer pauses the track and skips to the next"></p>
+
+On macOS a card shows what Spotify or Apple Music is playing, in an accent read out of the cover. It takes the mouse: play, pause, skip, seek along the line, shuffle, repeat, and the volume at the right end of the controls.
+
+### One row, light or dark
+
+<p align="center"><img src="docs/fold.webp" width="760" alt="The band folds into one row and opens again, then turns from dark to light"></p>
+
+`/fold` folds the whole band into one row, and opens it again. The colours are Claude Code's own theme, so the band follows it from dark to light.
 
 ## Requirements
 
