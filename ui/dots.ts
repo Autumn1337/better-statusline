@@ -80,19 +80,17 @@ export function trend(values: number[], cols: number, rows: number, hue: string)
   return f.runs(hue)
 }
 
-/** Points taken round a ring for its track, and how thick its spent part is drawn, in cell widths. */
+/** Points taken round a ring. */
 const STEPS = 40
-const WEIGHT = 0.5
 
 type Dot = { x: number; y: number; at: number }
-const circles = new Map<string, { cols: number; track: Dot[]; band: Dot[] }>()
+const circles = new Map<string, { cols: number; dots: Dot[] }>()
 
 /**
  * The dots of a ring as tall as `rows` rows of cells on the terminal's uneven dot grid, each with how far round the
- * ring it lies, clockwise from the top. The track is `STEPS` points of the circle, found on the screen in cell widths
- * and snapped to the nearest dot: the right half's, and their mirror for the left, so both sides match. The band is
- * every dot within half `WEIGHT` of the circle. `aspect` is a cell's height over its width, which sets how many
- * columns the circle spans.
+ * ring it lies, clockwise from the top: `STEPS` points of the circle, found on the screen in cell widths and snapped
+ * to the nearest dot, the right half's and their mirror for the left, so both sides match. `aspect` is a cell's
+ * height over its width, which sets how many columns the circle spans.
  */
 function circle(rows: number, aspect: number) {
   const key = `${rows}@${aspect}`
@@ -104,30 +102,28 @@ function circle(rows: number, aspect: number) {
   const r = (bottom - top) / 2
   const cols = Math.ceil(2 * r)
   const [cx, cy] = [cols / 2, (top + bottom) / 2]
-  const dots = Array.from({ length: cols * 2 * h }, (_, i) => {
+  const grid = Array.from({ length: cols * 2 * h }, (_, i) => {
     const [x, y] = [i % (cols * 2), Math.floor(i / (cols * 2))]
     const [px, py] = centre(x, y)
-    return { x, y, at: (1.25 - Math.atan2(cy - py, px - cx) / (2 * Math.PI)) % 1, off: Math.hypot(px - cx, py - cy) - r, px, py }
+    return { x, y, at: (1.25 - Math.atan2(cy - py, px - cx) / (2 * Math.PI)) % 1, px, py }
   })
-  const nearest = (px: number, py: number) => dots.reduce((best, dot) => ((dot.px - px) ** 2 + (dot.py - py) ** 2 < (best.px - px) ** 2 + (best.py - py) ** 2 ? dot : best))
+  const nearest = (px: number, py: number) => grid.reduce((best, dot) => ((dot.px - px) ** 2 + (dot.py - py) ** 2 < (best.px - px) ** 2 + (best.py - py) ** 2 ? dot : best))
   const right = Array.from({ length: STEPS / 2 + 1 }, (_, i) => nearest(cx + r * Math.sin((2 * Math.PI * i) / STEPS), cy - r * Math.cos((2 * Math.PI * i) / STEPS)))
-  const track = [...new Set(right.flatMap(dot => [dot, dots[dot.y * cols * 2 + cols * 2 - 1 - dot.x]!]))]
-  const made = { cols, track, band: dots.filter(dot => Math.abs(dot.off) <= WEIGHT / 2) }
+  const made = { cols, dots: [...new Set(right.flatMap(dot => [dot, grid[dot.y * cols * 2 + cols * 2 - 1 - dot.x]!]))] }
   circles.set(key, made)
   return made
 }
 
 /**
- * A ring of dots lit clockwise from its top to `used` (warning past `pace`), the empty track beyond; the spent part is
- * the heavier, a band over the track's single line. Any use at all lights its first dot. Round on a terminal whose
- * cells are `aspect` times as tall as wide.
+ * A ring of dots lit clockwise from its top to `used` (warning past `pace`), the empty track beyond: one line of dots
+ * all the way round, the spent part told from the rest by its colour alone. Any use at all lights its first dot.
+ * Round on a terminal whose cells are `aspect` times as tall as wide.
  */
 export function ring(used: number, rows: number, aspect: number, hue: string, pace?: number) {
-  const { cols, track, band } = circle(rows, aspect)
+  const { cols, dots } = circle(rows, aspect)
   const f = field(cols, rows)
-  const reach = used > 0 ? Math.max(used, Math.min(...track.map(dot => dot.at))) + 1e-9 : -1
-  for (const { x, y, at } of track) f.put(x, y, at <= reach ? (pace !== undefined && at > pace ? WARN : LIT) : FAINT)
-  for (const { x, y, at } of band) if (at <= reach) f.put(x, y, pace !== undefined && at > pace ? WARN : LIT)
+  const reach = used > 0 ? Math.max(used, Math.min(...dots.map(dot => dot.at))) + 1e-9 : -1
+  for (const { x, y, at } of dots) f.put(x, y, at <= reach ? (pace !== undefined && at > pace ? WARN : LIT) : FAINT)
   return f.runs(hue)
 }
 
