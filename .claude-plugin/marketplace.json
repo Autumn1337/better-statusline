@@ -1,0 +1,12 @@
+{
+  "name": "better-statusline",
+  "owner": { "name": "Ewen Gao" },
+  "metadata": { "description": "better-statusline, a status line for Claude Code by Ewen Gao" },
+  "plugins": [
+    {
+      "name": "better-statusline",
+      "source": "./",
+      "description": "The status line above the prompt: the session's status and the music playing, one design"
+    }
+  ]
+}

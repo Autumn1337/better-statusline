@@ -1,0 +1,26 @@
+{
+  "name": "better-statusline",
+  "version": "0.7.0",
+  "description": "The status line above the prompt: the session's status and the music playing, one design",
+  "author": { "name": "Ewen Gao" },
+  "license": "MIT",
+  "repository": "https://github.com/Autumn1337/better-statusline",
+  "keywords": ["statusline", "status", "music", "spotify", "terminal"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "icons": {
+      "type": "string",
+      "title": "Icons",
+      "description": "auto draws Nerd Font icons in the terminals that carry them (Ghostty, kitty, WezTerm) and plain Unicode in the rest. nerd pins them where your own font is a Nerd Font.",
+      "default": "auto",
+      "options": ["auto", "nerd", "unicode"]
+    },
+    "motion": {
+      "type": "string",
+      "title": "Motion",
+      "description": "auto follows macOS's Reduce Motion and moves in full elsewhere. reduced holds the meter, the spinner and the figures still, the lightest on the CPU.",
+      "default": "auto",
+      "options": ["auto", "full", "reduced"]
+    }
+  }
+}
