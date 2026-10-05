@@ -2,12 +2,23 @@
 
 A status line for [Claude Code](https://claude.com/claude-code), drawn above the prompt: the session's figures as dot-matrix rings, and the music you are playing beside them.
 
+![The band above the prompt: a music card with its cover, then the model, the folder and the branch over four rings and a row of bars](docs/band.png)
+
+<sub>Drawn by the plugin's own code as Ghostty paints it, with sample figures and a cover made for the picture.</sub>
+
 ## What it shows
 
+![The status: the header over the rings of context, cache, 5-hour and weekly, and the bars of spend](docs/rings.png)
+
 - **Header**: the model and its effort, the folder, the git branch with its staged and modified files, the lines the session added and removed, and the subagents at work.
-- **Rings**: the context window, the prompt cache (the minutes left before it goes cold), and the 5-hour and weekly limits. A limit's arc turns yellow once you spend faster than its window passes.
-- **Bars**: what each recent turn cost, beside the session's total.
-- **Music card** (macOS): the cover, title, artist and album of what Spotify or Apple Music is playing. Click to play, pause, skip, seek, shuffle, repeat or change the volume.
+- **Context**: how full the window is.
+- **Cache**: the minutes left before the prompt cache goes cold, counted from the last response. An hour on a subscription inside its limits, five minutes otherwise.
+- **5-hour and weekly**: how much of each limit is spent, and when it starts over. The arc turns yellow once you spend faster than the window passes.
+- **Spend**: what each recent turn cost, beside the session's total.
+
+<img src="docs/card.png" width="480" alt="The music card: the cover in its glow, the title, artist and album, the line and the controls">
+
+On macOS a card shows what Spotify or Apple Music is playing. It takes the mouse: play, pause, skip, seek along the line, shuffle, repeat, and the volume at the right end of the controls.
 
 `/fold` folds the whole band into one row, and opens it again.
 
@@ -21,9 +32,9 @@ A status line for [Claude Code](https://claude.com/claude-code), drawn above the
 | Rings that are round at your font size | `python3`, and a terminal that reports its pixel size |
 | Nerd Font icons | Ghostty, kitty or WezTerm, or your own Nerd Font |
 
-Everything degrades by design: no player means the status alone, no pictures means the card without its cover, no Nerd Font means plain Unicode icons.
+Each missing piece takes only its own part away: without a player the band is the status alone, without pictures the card has no cover, without a Nerd Font the icons are plain Unicode.
 
-The plugin is built on Claude Code's function hooks, an early-access API that still changes between releases. It is developed on macOS in Ghostty; the other terminals follow from how each is read, and are untested.
+The plugin is built on Claude Code's function hooks, an early-access API that still changes between releases. It is developed on macOS in Ghostty. The other terminals are handled by what each one reports, and are untested.
 
 ## Install
 
