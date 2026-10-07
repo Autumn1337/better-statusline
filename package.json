@@ -1,0 +1,31 @@
+{
+  "name": "better-statusline",
+  "version": "0.7.1",
+  "description": "A Claude Code status line with dot-matrix rings and a macOS music player.",
+  "author": "Ewen Gao",
+  "license": "MIT",
+  "homepage": "https://github.com/Autumn1337/better-statusline#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Autumn1337/better-statusline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Autumn1337/better-statusline/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "statusline",
+    "terminal",
+    "spotify",
+    "apple-music"
+  ],
+  "files": [
+    ".claude-plugin/plugin.json",
+    ".claude-plugin/marketplace.json",
+    "hooks/",
+    "ui/",
+    "bridge/",
+    "types/"
+  ]
+}

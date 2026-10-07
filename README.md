@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/poster.jpg" width="100%" alt="better-statusline, by Ewen Gao: the band above the prompt, a music card beside the rings of context, cache and the limits">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/poster.jpg" width="100%" alt="better-statusline, by Ewen Gao: the band above the prompt, a music card beside the rings of context, cache and the limits">
 </p>
 
 <h1 align="center">better-statusline</h1>
@@ -25,7 +25,7 @@
 ## The film
 
 <p align="center">
-  <img src="docs/film.webp" width="100%" alt="The film: a dot becomes a braille cell, a circle is snapped to dots, the rings fill, the music card takes its colour from its cover, and the whole band folds and turns from dark to light">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/film.webp" width="100%" alt="The film: a dot becomes a braille cell, a circle is snapped to dots, the rings fill, the music card takes its colour from its cover, and the whole band folds and turns from dark to light">
 </p>
 
 <p align="center">
@@ -39,13 +39,13 @@
 
 ## What it shows
 
-![The band as it stands: the music card, then the header over the rings of context, cache, 5-hour and weekly, and the bars of spend](docs/band.png)
+![The band as it stands: the music card, then the header over the rings of context, cache, 5-hour and weekly, and the bars of spend](https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/band.png)
 
 ### Drawn in dots
 
 <p align="center">
-  <img src="docs/stills/01-eight-dots.jpg" width="49%" alt="A braille cell: eight dots, two across and four down">
-  <img src="docs/stills/02-true-circle.jpg" width="49%" alt="A circle laid over the terminal's grid of dots, each point of it snapped to the nearest dot">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/01-eight-dots.jpg" width="49%" alt="A braille cell: eight dots, two across and four down">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/02-true-circle.jpg" width="49%" alt="A circle laid over the terminal's grid of dots, each point of it snapped to the nearest dot">
 </p>
 
 A braille cell is eight dots. Every drawing here is made of them: a ring is a true circle, found on the screen and snapped dot by dot to the terminal's grid.
@@ -53,12 +53,12 @@ A braille cell is eight dots. Every drawing here is made of them: a ring is a tr
 ### Rings
 
 <p align="center">
-  <img src="docs/stills/03-context.jpg" width="49%" alt="The context ring: 26%, 259k of 1M">
-  <img src="docs/stills/04-cache.jpg" width="49%" alt="The cache ring: four minutes left of an hour">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/03-context.jpg" width="49%" alt="The context ring: 26%, 259k of 1M">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/04-cache.jpg" width="49%" alt="The cache ring: four minutes left of an hour">
 </p>
 <p align="center">
-  <img src="docs/stills/05-limits.jpg" width="49%" alt="The 5-hour and weekly rings, the weekly one yellow past its pace">
-  <img src="docs/stills/06-rings.jpg" width="49%" alt="The four rings in a row: context, cache, 5-hour, weekly">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/05-limits.jpg" width="49%" alt="The 5-hour and weekly rings, the weekly one yellow past its pace">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/06-rings.jpg" width="49%" alt="The four rings in a row: context, cache, 5-hour, weekly">
 </p>
 
 Each ring is lit clockwise from its top, with its figure at its heart.
@@ -72,7 +72,7 @@ Above them, a header names the model and its effort, the folder, the git branch 
 ### Spend
 
 <p align="center">
-  <img src="docs/stills/07-spend.jpg" width="49%" alt="Bars of dots, one for each turn, beside the session's total and its tokens in and out">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/07-spend.jpg" width="49%" alt="Bars of dots, one for each turn, beside the session's total and its tokens in and out">
 </p>
 
 One bar for each recent turn, beside the session's total. The bars grow by the square root of the cost, so one dear turn leaves the rest standing.
@@ -80,8 +80,8 @@ One bar for each recent turn, beside the session's total. The bars grow by the s
 ### Music
 
 <p align="center">
-  <img src="docs/stills/08-colour.jpg" width="49%" alt="The cover's pixels sorted by hue round a wheel, the fullest slice chosen as the card's accent">
-  <img src="docs/stills/09-card.jpg" width="49%" alt="The music card: the cover in its glow, the title, artist and album, the line and the controls, in the cover's own colour">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/08-colour.jpg" width="49%" alt="The cover's pixels sorted by hue round a wheel, the fullest slice chosen as the card's accent">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/09-card.jpg" width="49%" alt="The music card: the cover in its glow, the title, artist and album, the line and the controls, in the cover's own colour">
 </p>
 
 On macOS a card shows what Spotify or Apple Music is playing, in an accent read out of the cover. It takes the mouse: play, pause, skip, seek along the line, shuffle, repeat, and the volume at the right end of the controls.
@@ -89,8 +89,8 @@ On macOS a card shows what Spotify or Apple Music is playing, in an accent read 
 ### The band
 
 <p align="center">
-  <img src="docs/stills/10-terminal.jpg" width="49%" alt="The whole band in a terminal window, above the prompt">
-  <img src="docs/stills/11-themes.jpg" width="49%" alt="The band turning from dark to light">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/10-terminal.jpg" width="49%" alt="The whole band in a terminal window, above the prompt">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/11-themes.jpg" width="49%" alt="The band turning from dark to light">
 </p>
 
 `/fold` folds the whole band into one row, and opens it again. The colours are Claude Code's own theme, so the band follows it from dark to light.
@@ -125,7 +125,16 @@ claude plugin marketplace update better-statusline
 claude plugin update better-statusline@better-statusline
 ```
 
-Or from a clone, for one session:
+Or install from npm and load it for one session:
+
+```sh
+npm install -g better-statusline
+claude --plugin-dir "$(npm root -g)/better-statusline"
+```
+
+To update the npm installation, run `npm install -g better-statusline@latest`.
+
+To load from a clone for one session:
 
 ```sh
 git clone https://github.com/Autumn1337/better-statusline
@@ -174,5 +183,5 @@ tsc -p .
 MIT © Ewen Gao
 
 <p align="center">
-  <img src="docs/stills/12-name.jpg" width="49%" alt="better-statusline, Ewen Gao">
+  <img src="https://raw.githubusercontent.com/Autumn1337/better-statusline/main/docs/stills/12-name.jpg" width="49%" alt="better-statusline, Ewen Gao">
 </p>

@@ -1,1 +1,4 @@
 .DS_Store
+.claude-plugin/types/
+node_modules/
+*.tgz
